@@ -6,21 +6,15 @@ terraform {
   }
 }
 
-module "vpc" {
-  source  = "Young-ook/vpc/aws"
-  version = "1.0.3"
-}
-
 module "main" {
-  source  = "../.."
-  subnets = values(module.vpc.subnets["public"])
+  source = "../.."
 }
 
-resource "test_assertions" "null" {
-  component = "null"
+resource "test_assertions" "pet_name" {
+  component = "pet_name"
 
-  check "null_cluster" {
-    description = "check if the default emr cluster is null"
-    condition   = !can(module.main.cluster.enabled)
+  check "pet_name" {
+    description = "default random pet name"
+    condition   = can(length(regexall("^s3", module.main.bucket.id)) > 0)
   }
 }

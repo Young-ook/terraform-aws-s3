@@ -1,8 +1,10 @@
+### labels
+
 ### frigga name
 module "frigga" {
   source  = "Young-ook/spinnaker/aws//modules/frigga"
-  version = "3.0.0"
-  name    = var.name == null || var.name == "" ? "s3" : var.name
+  version = "2.3.6"
+  name    = var.name == null || var.name == "" ? "emr" : var.name
   petname = var.name == null || var.name == "" ? true : false
 }
 
