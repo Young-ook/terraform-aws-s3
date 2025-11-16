@@ -3,7 +3,11 @@
 # Amazon EMR (Elastic MapReduce)
 [Amazon EMR](https://aws.amazon.com/emr/) is the industry-leading cloud big data solution for petabyte-scale data processing, interactive analytics, and machine learning using open-source frameworks such as Apache Spark, Apache Hive, and Presto.
 
-![aws-emr-explorer](images/aws-emr-explorer.png)
+**Explore Amazon EMR**
+- Amazon EMR on [Amazon EC2](https://github.com/Young-ook/terraform-aws-ec2): Process and analysis data for Machine Learning, scientific simulation, data mining, web indexing, log file analysis and data warehousing based on virtual machine computring environment
+- Amazon EMR Studio: Manage Jupyter notebooks that runs on Amazon EMR clusters and debig applications, such as Apache Spark
+- Amazon EMR Serverless: Run big data applications using open-source frameworks without managing clusters and servers
+- Amazon EMR on [EKS](https://github.com/Young-ook/terraform-aws-eks): Run open-source big data frameworks on Amazon Elastic Kubernetes Service
 
 ## Getting started
 ### Prerequisites
