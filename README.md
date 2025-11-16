@@ -188,20 +188,30 @@ terraform apply
 ```
 
 # Additional Resources
+## Data Catalog
+- [What are the main features of Data Catalog software](https://www.techtarget.com/searchdatamanagement/answer/What-are-the-main-features-of-data-catalog-software)
+
+## Data Lake
+- [Data Lake](https://en.wikipedia.org/wiki/Data_lake)
+- [What is a data lake?](https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/)
+- [Introduction to Data Lakes](https://www.databricks.com/discover/data-lakes)
+
+## Data Mesh
+- [Data Mesh: A Monolithic Data Lake to a Distributed Data Mesh](https://martinfowler.com/articles/data-monolith-to-mesh.html)
+- [Data Mesh Architecture](https://www.datamesh-architecture.com/)
+- [Amazon DataZone - Data Mesh and Modern Data Architecture on AWS](https://youtu.be/arA-s8GTs6c?si=BsYUgAWNLrbsGbi8)
+
 ## Mountpoint for Amazon S3
 - [Working with Mountpoint for Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mountpoint.html)
 - [Mountpoint for Amazon S3 configuration](https://github.com/awslabs/mountpoint-s3/blob/main/doc/CONFIGURATION.md)
 - [Mountpoint for Amazon S3 file system behavior](https://github.com/awslabs/mountpoint-s3/blob/main/doc/SEMANTICS.md)
 
-## Storage Cost Optimization
+## Governance
 * [How to optimize storage costs using Amazon S3](https://d1.awsstatic.com/product-marketing/S3/Amazon_S3_eBook_Cost_Optimization.pdf)
 * [5 Ways to reduce data storage costs using Amazon S3 Storage Lens](https://aws.amazon.com/blogs/storage/5-ways-to-reduce-costs-using-amazon-s3-storage-lens/)
 * [Amazon S3 cost optimization for predictable and dynamic access patterns](https://aws.amazon.com/blogs/storage/amazon-s3-cost-optimization-for-predictable-and-dynamic-access-patterns/)
 * [Expiring Amazon S3 Objects Based on Last Accessed Date to Decrease Costs](https://aws.amazon.com/blogs/architecture/expiring-amazon-s3-objects-based-on-last-accessed-date-to-decrease-costs/)
-
-## Storage Class
 - [Amazon S3 Glacier is the Best Place to Archive Your Data – Introducing the S3 Glacier Instant Retrieval Storage Class](https://aws.amazon.com/blogs/aws/amazon-s3-glacier-is-the-best-place-to-archive-your-data-introducing-the-s3-glacier-instant-retrieval-storage-class/)
 - [Announcing the new Amazon S3 Express One Zone high performance storage class](https://aws.amazon.com/blogs/aws/new-amazon-s3-express-one-zone-high-performance-storage-class/)
-
-## Governance
 - [Monitor, review, and protect Amazon S3 buckets using Access Analyzer for S3](https://aws.amazon.com/blogs/storage/protect-amazon-s3-buckets-using-access-analyzer-for-s3/)
+
