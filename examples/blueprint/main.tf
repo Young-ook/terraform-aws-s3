@@ -16,8 +16,8 @@ module "datalake" {
 
 ### vpc
 module "vpc" {
-  source  = "Young-ook/vpc/aws"
-  version = "1.0.5"
+  source  = "Young-ook/ec2/aws//modules/vpc"
+  version = "1.0.8"
   name    = var.name
   tags    = var.tags
   vpc_config = var.use_default_vpc ? null : {
@@ -38,8 +38,8 @@ module "vpc" {
 ### emr
 module "emr-studio" {
   depends_on = [module.vpc, module.datalake]
-  source     = "Young-ook/emr/aws//modules/emr-studio"
-  version    = "0.0.4"
+  source     = "Young-ook/s3/aws//modules/emr-studio"
+  version    = "0.2.0"
   name       = var.name
   vpc        = module.vpc.vpc.id
   subnets    = slice(values(module.vpc.subnets[var.use_default_vpc ? "public" : "private"]), 0, 3)
@@ -56,8 +56,8 @@ module "emr-studio" {
 module "emr-ec2" {
   depends_on          = [module.vpc]
   for_each            = (var.emr_cluster != null ? toset(["enabled"]) : [])
-  source              = "Young-ook/emr/aws"
-  version             = "0.0.4"
+  source              = "Young-ook/s3/aws"
+  version             = "0.2.0"
   name                = var.name
   subnets             = slice(values(module.vpc.subnets[var.use_default_vpc ? "public" : "private"]), 0, 3)
   cluster             = var.emr_cluster
@@ -68,8 +68,8 @@ module "emr-ec2" {
 
 module "emr-eks" {
   depends_on = [module.eks]
-  source     = "Young-ook/emr/aws//modules/emr-containers"
-  version    = "0.0.2"
+  source     = "Young-ook/s3/aws//modules/emr-containers"
+  version    = "0.2.0"
   name       = module.eks.cluster.name
   container_providers = {
     id        = module.eks.cluster.name
@@ -91,7 +91,8 @@ module "eks" {
 ### redshift
 module "redshift" {
   depends_on = [module.vpc]
-  source     = "../../modules/redshift"
+  source     = "Young-ook/s3/aws//modules/redshift"
+  version    = "0.2.0"
   name       = var.name
   tags       = var.tags
   vpc        = module.vpc.vpc.id
@@ -102,8 +103,8 @@ module "redshift" {
 
 ### application/workbench
 module "ec2" {
-  source  = "Young-ook/ssm/aws"
-  version = "1.0.5"
+  source  = "Young-ook/ec2/aws"
+  version = "1.0.8"
   name    = var.name
   tags    = var.tags
   subnets = slice(values(module.vpc.subnets[var.use_default_vpc ? "public" : "private"]), 0, 3)
