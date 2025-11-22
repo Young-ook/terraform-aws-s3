@@ -56,7 +56,7 @@ module "emr-studio" {
 module "emr-ec2" {
   depends_on          = [module.vpc]
   for_each            = (var.emr_cluster != null ? toset(["enabled"]) : [])
-  source              = "Young-ook/s3/aws"
+  source              = "Young-ook/s3/aws//modules/emr"
   version             = "0.2.0"
   name                = var.name
   subnets             = slice(values(module.vpc.subnets[var.use_default_vpc ? "public" : "private"]), 0, 3)
