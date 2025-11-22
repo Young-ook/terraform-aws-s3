@@ -14,7 +14,7 @@
 ### 내려받기
 여러 분의 작업 환경에 예제를 내려받기 합니다.
 ```
-git clone https://github.com/Young-ook/terraform-aws-emr
+git clone https://github.com/Young-ook/terraform-aws-s3
 cd terraform-aws-emr/examples/blueprint
 ```
 
@@ -39,6 +39,9 @@ terraform apply -target module.vpc -target module.emr-studio
 ```
 terraform apply -target module.vpc -target module.redshift
 ```
+
+## 저장소
+Amazon S3(Simple Storage Service)는 업계 최고의 확장성, 데이터 가용성, 보안 및 성능을 제공하는 객체 스토리지 서비스입니다. 이 예제에서는 분석 데이터 보관을 위하여 S3 버킷을 사용합니다. 그리고 s3 수명 주기 구성을 활용하여 오브젝트 액세스 패턴에 따라 스토리지 클래스를 자동으로 전환하는 인텔리전트 계층화를 활성화할 수 있습니다. 이는 대용량의 데이터를 분석해야 하는 데이터 레이크 스토리지 비용을 가장 쉽게 줄일 수 있는 방법이기 때문에 중요합니다.
 
 ## EMR 스튜디오 (EMR Studio)
 로그인하면 EMR 스튜디오 콘솔로 리디렉션됩니다. 이전 단계에서 생성한 *emr-studio-xxxxx/emr-studio* 스튜디오가 준비된 것을 확인할 수 있습니다. 이제 EMR 스튜디오가 준비되었으니 다음 단계로 진행하여 스튜디오 작업 영역(Workspace)를 생성해 보겠습니다.
@@ -93,11 +96,6 @@ Amazon Redshift는 데이터 웨어하우스, 운영 데이터베이스, 데이�
 ```
 terraform apply -var-file fixture.graviton.tfvars
 ```
-
-## 저장소
-Amazon S3(Simple Storage Service)는 업계 최고의 확장성, 데이터 가용성, 보안 및 성능을 제공하는 객체 스토리지 서비스입니다. 이 예제에서는 분석 데이터 보관을 위하여 S3 버킷을 사용합니다. 그리고 s3 수명 주기 구성을 활용하여 오브젝트 액세스 패턴에 따라 스토리지 클래스를 자동으로 전환하는 인텔리전트 계층화를 활성화할 수 있습니다. 이는 대용량의 데이터를 분석해야 하는 데이터 레이크 스토리지 비용을 가장 쉽게 줄일 수 있는 방법이기 때문에 중요합니다.
-
-![aws-s3-lc-int-tiering](../../images/aws-s3-lc-int-tiering.png)
 
 ## 애플리케이션
 - [EMR Serverless Examples](https://github.com/aws-samples/emr-serverless-samples/tree/main/examples)

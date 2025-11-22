@@ -5,7 +5,6 @@
 
 ## Examples
 - [Analytics on AWS](https://github.com/Young-ook/terraform-aws-s3/tree/main/examples/blueprint)
-- [Data on Amazon EKS](https://github.com/Young-ook/terraform-aws-eks/blob/main/examples/data-ai)
 
 ## Getting started
 ### AWS CLI
@@ -67,7 +66,7 @@ To manage your objects so that they are stored cost effectively throughout their
 For more information, see [Object lifecycle management](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html).
 
 ### Example
-```
+```hcl
 module "s3" {
   source  = "Young-ook/s3/aws"
   name    = "datalake"
@@ -139,6 +138,8 @@ Modify the terraform configuration file to add a lifecycle rule to apply objects
 terraform init
 terraform apply
 ```
+
+![aws-s3-lc-int-tiering](./images/aws-s3-lc-int-tiering.png)
 
 ## Bucket Policy
 With Amazon S3 bucket policies, you can secure access to objects in your buckets, so that only users with the appropriate permissions can access them. You can even prevent authenticated users without the appropriate permissions from accessing your Amazon S3 resources. This example shows how to configure a bucket policy to allow access to buckets through VPC endpoints only for security and compliance.

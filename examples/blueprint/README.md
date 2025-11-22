@@ -14,7 +14,7 @@ This module requires *eksctl* which is an open-source cli tool for EKS cluster m
 ### Download
 Download this example on your workspace
 ```
-git clone https://github.com/Young-ook/terraform-aws-emr
+git clone https://github.com/Young-ook/terraform-aws-s3
 cd terraform-aws-emr/examples/blueprint
 ```
 
@@ -39,6 +39,9 @@ Similarly, if you don't want to create all the resources described in the main.t
 ```
 terraform apply -target module.vpc -target module.redshift
 ```
+
+## Storage
+Amazon S3 (Simple Storage Service) is an object storage service that offers industry-leading scalability, data availability, security, and performance. In this blueprint, you use an s3 bucket for data lake and big data analytics. And you can utilize s3 lifecycle configuration to enable intelligent-tiering that switches storage classes automatically based on object access pattern. This is important because it is easist way to reduce the storage cost of large volume datas for data lake.
 
 ## EMR Studio
 Upon login, it will redirect you to the EMR Studio console. You will notice that the *emr-studio-xxxxx/emr-studio* studio which you created in the previous step is ready. Your EMR Studio is now ready. Let's proceed to the next step to create a studio workspace.
@@ -93,11 +96,6 @@ In this example, you can launch your EMR cluster with AWS Graviton based node gr
 ```
 terraform apply -var-file fixture.graviton.tfvars
 ```
-
-## Storage
-Amazon S3 (Simple Storage Service) is an object storage service that offers industry-leading scalability, data availability, security, and performance. In this blueprint, you use an s3 bucket for data lake and big data analytics. And you can utilize s3 lifecycle configuration to enable intelligent-tiering that switches storage classes automatically based on object access pattern. This is important because it is easist way to reduce the storage cost of large volume datas for data lake.
-
-![aws-s3-lc-int-tiering](../../images/aws-s3-lc-int-tiering.png)
 
 ## Applications
 - [EMR Serverless Examples](https://github.com/aws-samples/emr-serverless-samples/tree/main/examples)

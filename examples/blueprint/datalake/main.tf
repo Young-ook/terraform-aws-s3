@@ -87,8 +87,8 @@ resource "aws_kinesis_firehose_delivery_stream" "firehose" {
 
 ### storage
 module "s3" {
-  source        = "Young-ook/sagemaker/aws//modules/s3"
-  version       = "0.3.4"
+  source        = "Young-ook/s3/aws"
+  version       = "0.2.0"
   name          = var.name
   tags          = var.tags
   force_destroy = var.force_destroy
